@@ -1,7 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+:root {
+    --left-bg-color: rgba(87, 84, 236, 0.7);
+    --right-bg-color: rgba(43, 43, 43, 0.8);
+}
 
 * {
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
@@ -9,6 +14,16 @@ body {
     height: 100vh;
     overflow: hidden;
     margin: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
 }
 
 .container  {
@@ -28,4 +43,29 @@ body {
 .split.left {
     left: 0;
     background: url('https://upload.wikimedia.org/wikipedia/commons/2/26/Slightly_opened_silver_Macbook.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.right {
+    right: 0;
+    background: url('https://i.ytimg.com/vi/n25AipUdRxs/maxresdefault.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
 }
